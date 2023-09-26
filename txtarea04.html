@@ -1,0 +1,35 @@
+﻿<style>
+textarea
+{
+  border:1px solid #999999;
+  width:100%;
+heigh:50%;
+  margin:5px 0;
+  padding:3px;
+}
+</style>
+<script>
+function Copydata(){
+  $("#two").val(JSON.stringify(tsvJSON($("#one").val())));
+}
+ function tsvJSON(tsv) {
+        const lines = tsv.split('\n');
+        const headers = lines.shift().split(',');
+        return lines.map(line => {
+          const data = line.split(',');
+          return headers.reduce((obj, nextKey, index) => {
+            obj[nextKey] = data[index];
+            return obj;
+          }, {});
+        });
+      }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<textarea rows="20"id="one" onkeyup=Copydata();>
+url,display
+https://hls.ondemandkorea.com/v1/202007/documentary/crime-chief/crime-chief-e20200701/playlist_720.m3u8,4시 상황실 사건반장 : 07/01/2020
+https://hls.ondemandkorea.com/v1/202007/documentary/screening-humanity/screening-humanity-e4855/playlist_720.m3u8,인간극장 : 4855회
+https://hls.ondemandkorea.com/v1/202007/documentary/kim-jins-newspaper-story-strike-show/kim-jins-newspaper-story-strike-show-e20200701/playlist_720.m3u8,김진의 돌직구 쇼 : 07/01/2020
+</textarea>
+<br/>
+<textarea rows="20" id="two"></textarea>
