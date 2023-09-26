@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<script>
+document.addEventListener('DOMContentLoaded',
+ function() {$( "#weebly-footer-signup-container-v3" ).remove();}, false)
+
+
+
+$(document).ready(function(){
+
+ $.getJSON("https://script.google.com/macros/s/AKfycbz0hyJK0LYVvRLQEK2XZ4HcyHFfj0hiTPZCk2yPdQ9Lci6VYY4/exec", function (data) {
+    var arr = data.user;
+$(arr).each(function () {
+       
+ $('#selectSkill').append($('<option></option>').val(this.abbreviation).html(this.name));
+      });
+    });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<style>
+#header-wrap { display:none; }
+button {
+  background-color:yellow;
+}
+
+button:focus {
+  background-color:orange;
+}
+
+</style>
+
+</head>
+<body>
+<a href="https://docs.google.com/document/d/e/2PACX-1vQ0H-yufM873xkiy9w3xgVkDaz9Gm17zO0HpumSw7ii4TfapOBn-s0mDBTXOx83WwBRXdDpJBA_MM32/pub">coffee</a>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<div class="dropdown">
+  <span>MENU</span>
+  
+    <div class="dropdown-content"><select id="selectSkill" onchange="if (this.value) window.location.href=this.value">select one</select>
+ </div>
+</div>
+<script>
+$(document).ready(function(){
+ $.getJSON("https://script.google.com/macros/s/AKfycbz0hyJK0LYVvRLQEK2XZ4HcyHFfj0hiTPZCk2yPdQ9Lci6VYY4/exec", function (data) {
+    var arr = data.user;
+$(arr).each(function () {
+       
+ $('#selectSkill').append($('<option></option>').val(this.abbreviation).html(this.name));
+      });
+    });
+ });
+
+</script>
+<video id="video" width="600" controls  onended="onVideoEnded();"></video>
+<p id="demo">
+</p><p id="demo2"></p>
+<div id="id01"></div>
+<button onclick="my()">next video</button>
+<button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
+<div class="results"></div>
+
+<button id='btn1'>드라마ㄱ</button>
+<button id='btn2'>ㄴ</button>
+<button id='btn3'>ㄷ</button>
+<button id='btn4'>ㄹ</button>
+<button id='btn5'>ㅁ</button>
+<button id='btn6'>ㅂ</button>
+<button id='btn7'>ㅅ</button>
+<button id='btn8'>ㅇ</button>
+<button id='btn9'>ㅈ</button>
+<button id='btn10'>ㅊ</button>
+<button id='btn11'>ㅋ</button>
+<button id='btn12'>12</button>
+<button id='btn13'>13</button>
+<button id='btn14'>14</button>
+<button id='btn15'>15</button>
+<button id='btn16'>16</button>
+<button id='btn17'>17</button>
+<button id='btn18'>18</button>
+<button id='btn19'>19</button>
+<button id='btn20'>20</button>
+<button id='btn21'>21</button>
+<button id='btn22'>22</button>
+<button id='btn23'>23</button>
+<button id='btn24'>24</button>
+<button id='btn25'>25</button>
+<button id='btn26'>26</button>
+<button id='btn27'>27</button>
+<button id='btn28'>28</button>
+<button id='btn29'>29</button>
+<button id='btn30'>30</button><hr>
+
+
+<script>
+var elem = document.getElementById("video");
+var fruits = [];
+ var vid_index     = 0;
+    var i=0;
+var url ='https://script.google.com/macros/s/AKfycbw319qb3IOEjmP5dmsYFuN7pDLHrQnypCq_cXe27EUEj4goqcs/exec'
+getj(url)
+$(document).ready(function(){
+
+$("#btn1").click(function(){
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=1'
+getj(url)
+});
+$("#btn2").click(function() {
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=3'
+getj(url)
+});
+$("#btn3").click(function() {    
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=5'
+getj(url)
+});
+$("#btn4").click(function() {     
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=7'
+getj(url)
+});
+
+$("#btn5").click(function(){    
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=9'
+getj(url)
+});
+$("#btn6").click(function() {   
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=11'
+getj(url)
+});
+$("#btn7").click(function() {  
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=13'
+getj(url)
+});
+$("#btn8").click(function() {   
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=15'
+getj(url)
+});
+$("#btn9").click(function() {   
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=17'
+getj(url)
+});
+$("#btn10").click(function() { 
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=19'
+getj(url)
+});
+$("#btn11").click(function(){
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=21'
+getj(url)
+});
+$("#btn12").click(function() {
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=23'
+getj(url)
+});
+$("#btn13").click(function() {    
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=25'
+getj(url)
+});
+$("#btn14").click(function() {     
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=27'
+getj(url)
+});
+
+$("#btn15").click(function(){    
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=29'
+getj(url)
+});
+$("#btn16").click(function() {   
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=31'
+getj(url)
+});
+$("#btn17").click(function() {  
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=33'
+getj(url)
+});
+$("#btn18").click(function() {   
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=35'
+getj(url)
+});
+$("#btn19").click(function() {   
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=37'
+getj(url)
+});
+$("#btn20").click(function() { 
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=39'
+getj(url)
+});
+
+$("#btn21").click(function(){
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=41'
+getj(url)
+});
+$("#btn22").click(function() {
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=43'
+getj(url)
+});
+$("#btn23").click(function() {    
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=45'
+getj(url)
+});
+$("#btn24").click(function() {     
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=47'
+getj(url)
+});
+
+$("#btn25").click(function(){    
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=49'
+getj(url)
+});
+$("#btn26").click(function() {   
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=51'
+getj(url)
+});
+$("#btn27").click(function() {  
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=53'
+getj(url)
+});
+$("#btn28").click(function() {   
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=55'
+getj(url)
+});
+$("#btn29").click(function() {   
+var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=57'
+getj(url)
+});
+$("#btn30").click(function() { 
+  var url ='https://script.google.com/macros/s/AKfycbxmqZELpndvgJg48soEHz0uWP4TJZ4FxubGzZtTDjbohdmdTv64Wgz-1WbsAdw--2Lx/exec?callback=59'
+getj(url)
+});
+  
+
+
+});
+
+
+
+
+
+function getj(url) {
+$("#div1").empty()
+ $.getJSON(url, function (data) {
+    var arr = data.user;
+
+$(arr).each(function () {
+  i++;
+var elem = document.createElement('button'); 
+elem.id = this.id;
+ elem.innerHTML = this.name; 
+elem.value=i
+fruits.push(this.id);
+ // document.body.appendChild(elem) 
+ $("#div1").append(elem);
+    elem.addEventListener('click', 
+   function(){
+   
+        var video = document.getElementById('video');
+    if (this.hls) { this.hls.destroy(); }
+    this.hls = new Hls();
+    this.hls.loadSource(this.id);
+
+next=parseInt(this.value)
+next2=parseInt(this.value)+2
+document.getElementById("demo").innerHTML =next;
+document.getElementById("demo2").innerHTML =fruits[next]
+   this.hls.attachMedia(video);
+ video.play();openFullscreen()
+});});});
+}
+
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+ function playVideo(videoSource, type) {
+  var video= document.getElementById('video');
+ 
+   this.hls = new Hls();
+    this.hls.loadSource(videoSource);
+    this.hls.attachMedia(video);
+
+            video.play();openFullscreen()
+  }
+function my() {
+
+ var video = document.getElementById('video');
+    if (this.hls) { this.hls.destroy(); }
+    this.hls = new Hls();
+    this.hls.loadSource(document.getElementById("demo2").innerHTML);
+next=parseInt(document.getElementById("demo").innerHTML)+1
+document.getElementById("demo").innerHTML =next;
+document.getElementById("demo2").innerHTML =fruits[next]
+    this.hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });
+}
+
+function onVideoEnded(){
+ var video = document.getElementById('video');
+    if (this.hls) { this.hls.destroy(); }
+    this.hls = new Hls();
+    this.hls.loadSource(document.getElementById("demo2").innerHTML);
+next=parseInt(document.getElementById("demo").innerHTML)+1
+document.getElementById("demo").innerHTML =next;
+document.getElementById("demo2").innerHTML =fruits[next]
+    this.hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });
+}
+ function playVideo(videoSource, type) {
+  var video= document.getElementById('video');
+ 
+   this.hls = new Hls();
+    this.hls.loadSource(videoSource);
+    this.hls.attachMedia(video);
+
+            video.play();openFullscreen()
+  }
+
+
+
+
+
+</script>
+<div id="div1"></div>
+</body>
+</html>
