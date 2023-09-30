@@ -1,0 +1,48 @@
+//https://drive.google.com/open?id=1JE4jODStH6MG1zihODhbNXlA6H-x5coo&usp=drive_copy
+//https://drive.google.com/open?id=1FSBh2Zk6JgBhFkzYhowwzQBNNFDU4gx_&usp=drive_copy
+//https://script.google.com/macros/s/AKfycbxmLmZ6_NoU0DUIlJPVre0SlYtjVzpOhTiW1JFGsADtTdr43Dl9pB4jliA1Dpj-zZ-SmQ/exec
+//Google Apps Script. Need to be pasted on the code.gs file
+
+function doGet() {
+  var html = HtmlService.createHtmlOutputFromFile('index');
+  return html.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
+
+
+function uploadFiles(data)
+{
+ var file = data.myFile;
+ var folder = DriveApp.getFolderById('1JE4jODStH6MG1zihODhbNXlA6H-x5coo');
+ var createFile = folder.createFile(file);
+ return createFile.getUrl();
+}
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <title>Upload Files</title>
+  </head>
+  <body>
+    <h1>File Uploader</h1>
+    <form>
+        <input type="file" name="myFile" mulitple>
+        <br>
+        <br>
+        <input type="button" id="submitBtn" value="Upload Files">
+        <label id="resp"></label>
+    </form>
+    <script>
+      document.getElementById('submitBtn').addEventListener('click',
+        function(e){
+          google.script.run.withSuccessHandler(onSuccess).uploadFiles(this.parentNode)
+        })
+        
+        function onSuccess(data){
+          document.getElementById('resp').innerHTML = "File Uploaded to the path " +data;
+        }
+       
+    </script>
+  </body>
+</html>

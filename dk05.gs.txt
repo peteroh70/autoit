@@ -1,0 +1,66 @@
+function escape(htmlStr) {
+   return htmlStr.replace(/&amp;/g, "")
+         .replace(/&lt;/g, "<")
+         .replace(/&gt;/g, ">")
+         .replace(/&quot;/g, "\"")
+         .replace(/&#39;/g, "'");      
+
+}
+// Use this code for Google Docs, Slides, Forms, or Sheets.
+function onOpen() {
+  SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
+      .createMenu('Dialog')
+      .addItem('Open', 'openDialog')
+       .addItem('test2', 'menuItem2')
+      .addToUi();
+}
+
+
+function openDialog() {
+
+  var html = HtmlService.createHtmlOutputFromFile('Index')
+    .setWidth(670)
+    .setHeight(500)
+    .setSandboxMode(HtmlService.SandboxMode.NATIVE);
+    SpreadsheetApp.getUi()
+    .showModalDialog(html, 'hello');
+
+
+}
+const openAudioPlayer = () => {
+  const cell = SpreadsheetApp.getActiveSheet().getActiveCell().getValue();
+  const html = `${cell}`;
+  const dialog = HtmlService.createHtmlOutput(html).setTitle('Play').setWidth(800).setHeight(600);
+  SpreadsheetApp.getUi().showModelessDialog(dialog, 'Play video');
+};
+
+
+
+
+
+function menuItem2() {
+openAudioPlayer() 
+  }
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+<script src="https://www.google.com/cloudprint/client/cpgadget.js">
+</script>
+<script>
+  window.onload = function() {
+    var gadget = new cloudprint.Gadget();
+    gadget.setPrintButton(
+        cloudprint.Gadget.createDefaultPrintButton("print_button_container")); // div id to contain the button
+    gadget.setPrintDocument("url", "Test Page", "https://www.google.com/landing/cloudprint/testpage.pdf");
+    gadget.openPrintDialog();
+  }
+</script>
+  </head>
+  <body>
+        <iframe width="600" height="500" src="https://www.youtube.com/embed/VFSrvcqXgi8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="QUERY Function - Select Columns with Checkboxes - Google Sheets"></iframe>
+    <div id="button"></div>
+  </body>
+</html>

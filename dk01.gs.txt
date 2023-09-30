@@ -1,0 +1,120 @@
+function displayPrompt() {
+  var ui = SpreadsheetApp.getUi();
+  var result = ui.prompt("Please enter your name");
+}
+
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  // Or DocumentApp or FormApp.
+  ui.createMenu('Custom Menu')
+      .addItem('test1', 'menuItem1')
+      .addSeparator()
+      .addSubMenu(ui.createMenu('Sub-menu')
+          .addItem('Second item', 'menuItem2'))
+      .addToUi();
+}
+
+function menuItem1() {
+test1()
+}
+
+function menuItem2() {
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ui = SpreadsheetApp.getUi ();
+  var response = ui.prompt("Enter Range:",ui.ButtonSet.OK_CANCEL);
+
+  if(response.getSelectedButton() == ui.Button.OK){
+    var inputvalue = ui.prompt("Set Value:",ui.ButtonSet.OK_CANCEL);
+  
+    ss.getRange(response.getResponseText).setValue()
+  }else if(response.getSelectedButton() == ui.Button.CANCEL){
+  }
+
+
+  var selection = ss.getRange(response.getResponseText()).setValue();
+  var html = "<script>window.open('" + selection + "');google.script.host.close();</script>";
+  
+  var userInterface = HtmlService.createHtmlOutput(html);
+  
+  SpreadsheetApp.getUi().showModalDialog(userInterface, 'Open Tab');
+
+}
+function DECODE(input) {
+
+
+  return decodeURI(input).replace("%3A", ":").replace(/%2F/g, "/").replace(/\+/g, " ")
+}
+function sample() {
+  const srcRange = "Sheet1!A1:A10"; // Please set the source range.
+
+  const range = SpreadsheetApp.getActiveSpreadsheet().getRange(srcRange);
+  const orgNumberFormats = range.getNumberFormats();
+  const values = range.setNumberFormat("@").getRichTextValues();
+  const urls = values.map((r) => r.map((c) => c && (c.getLinkUrl(0, 1) || "")));
+  range.setNumberFormats(orgNumberFormats);
+  
+  console.log(urls);
+}
+function show(e) {
+  Logger.log('showDataEntryForm');
+  
+  var html = HtmlService.createHtmlOutputFromFile('new')
+      .setTitle('Data Entry Form')
+      .setWidth(300);
+      
+  SpreadsheetApp.getUi()
+      .showSidebar(html);
+};
+function test1()
+{
+  const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+ const sp = SpreadsheetApp.getActiveSpreadsheet();
+ const ss = sp.getActiveSheet();
+ var data = ss.getRange("A1:A").getValues().filter(String);
+for(var i=0; i<data.length;i++)
+     
+      {
+if (data[i].toString().startsWith("https://ol.ondemandkorea.com")) {
+          array = data[i].toString().split("&")[3];7
+          brray = data[i].toString().split("&")[4];5
+          crray = data[i].toString().split("&")[5];7
+          drray = data[i].toString().split("&")[6];5
+          erray = data[i].toString().split("&")[7];7
+        
+        
+
+            array1 =array.split("=")[1]
+            brray1 =brray.split("=")[1]
+            crray1 =crray.split("=")[1]
+            drray1 =drray.split("=")[1]
+            erray1 =erray.split("=")[1]
+           
+
+            array2 =DECODE(array1)
+            brray2 =DECODE(brray1) + `-${day}-${month}-${year}`
+            crray2 =DECODE(crray1)
+            drray2 =DECODE(drray1)
+            erray2 =DECODE(erray1)
+           
+          sp.getRange("E"+(i+1)).setValue(array2);
+          sp.getRange("C"+(i+1)).setValue(brray2);
+           sp.getRange("D"+(i+1)).setValue(crray2);
+          sp.getRange("B"+(i+1)).setValue(drray2);
+          sp.getRange("F"+(i+1)).setValue(erray2);
+        
+      }
+      else if (data[i].toString().startsWith("https://hls.ondemandkorea.com")) {
+        var aa =sp.getRange("A"+(i+1)).getValues()
+sp.getRange("B"+(i+1)).setValue(aa);
+crray = aa.toString().split("/")[7] + `-${day}-${month}-${year}`
+sp.getRange("C"+(i+1)).setValue(crray);
+
+
+  }  
+      }
+}

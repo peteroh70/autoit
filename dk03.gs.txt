@@ -1,0 +1,97 @@
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  // Or DocumentApp or FormApp.
+  ui.createMenu('Custom Menu')
+      .addItem('test1', 'menuItem1')
+      .addItem('Second item', 'menuItem2')
+      .addItem('third item', 'menuItem3')
+      .addToUi();
+}
+
+function menuItem1() {
+ const sp = SpreadsheetApp.getActiveSpreadsheet();
+ const ss = sp.getActiveSheet();
+ var data = ss.getRange("A2:A").getValues().filter(String);
+for(var i=0; i<data.length;i++)
+     
+      {
+//="<iframe src=" & String.fromCharCode(34) & "https://www.youtube.com/embed/" & data[i].toString().split("=")[1] & "?feature=oembed" & String.fromCharCode(34) & " allowfullscreen></iframe>"
+//=join(",",importdata(C2))   data[i] = ['=A' + (i+1).toString() + ' + 1 ' ];
+//=join(",",importdata(C2))
+var url  = '<iframe src="https:\/\/www.youtube.com\/embed\/'.toString()
+var url2 = '?feature=oembed" allowfullscreen></iframe>'
+var url3 = 'http://noembed.com/embed?url='
+var url4 = '=join(",",importdata("'
+var url5 = '=INDEX(SPLIT('
+          array = url + data[i].toString().split("=")[1] +url2 
+          array2 = url3 + data[i].toString()
+          array3 = url4 + array2 +'",","))'
+          //array4 = url5 + array3 +',","),1,5)'
+
+          sp.getRange("B"+(i+2)).setValue(array);
+          sp.getRange("C"+(i+2)).setValue(array2);
+          sp.getRange("D"+(i+2)).setValue(array3);
+            //sp.getRange("E"+(i+2)).setValue(array4);
+}
+}
+function title(str) {
+var pos = str.indexOf('">')
+   var res = str.substring(pos-40, pos-3);
+  var pos2 = res.indexOf('allowfullscreen title="');  
+   var res2 = res.substring(pos2, pos-22);
+
+  return res2
+  }
+
+function menuItem2() {
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ui = SpreadsheetApp.getUi ();
+  var response = ui.prompt("Enter Range:",ui.ButtonSet.OK_CANCEL);
+
+  if(response.getSelectedButton() == ui.Button.OK){
+    var inputvalue = ui.prompt("Set Value:",ui.ButtonSet.OK_CANCEL);
+  
+    ss.getRange(response.getResponseText).setValue()
+  }else if(response.getSelectedButton() == ui.Button.CANCEL){
+  }
+
+
+  var selection = ss.getRange(response.getResponseText()).setValue();
+  var html = "<script>window.open('" + selection + "');google.script.host.close();</script>";
+  
+  var userInterface = HtmlService.createHtmlOutput(html);
+  
+  SpreadsheetApp.getUi().showModalDialog(userInterface, 'Open Tab');
+
+}
+function DECODE(input) {
+
+
+  return decodeURI(input).replace("%3A", ":").replace(/%2F/g, "/").replace(/\+/g, " ")
+}
+function escape(htmlStr) {
+   return htmlStr.replace(/&amp;/g, "")
+         .replace(/&lt;/g, "<")
+         .replace(/&gt;/g, ">")
+         .replace(/&quot;/g, "\"")
+         .replace(/&#39;/g, "'");      
+
+}
+// Use this code for Google Docs, Slides, Forms, or Sheets.
+
+const openAudioPlayer = () => {
+  const cell = SpreadsheetApp.getActiveSheet().getActiveCell().getValue();
+  const html = `${cell}`;
+  const dialog = HtmlService.createHtmlOutput(html).setTitle('Play').setWidth(800).setHeight(600);
+  SpreadsheetApp.getUi().showModelessDialog(dialog, 'Play video');
+};
+
+
+
+
+
+function menuItem3() {
+openAudioPlayer() 
+  }
+
+
